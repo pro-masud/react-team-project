@@ -1,17 +1,12 @@
 import team from "../../faker/data";
+import Member from "../member/member";
 const Team = () => {
   return (
     <>
       <div className="teamMember">
-        { team.map((single_item, index) => {
-           return <div className="singleMember" key={index}>
-                    <div className="userImage">
-                    <img src={single_item.photo} alt="" />
-                    </div>
-                    <h2>{single_item.name}</h2>
-                    <p>{single_item.skill}</p>
-                </div>
-        })}
+        { team.map((single_item, index) => (
+           <Member member={single_item} key={index} />
+        ))}
         
       </div>
     </>
